@@ -1,0 +1,56 @@
+/*Main stylesheet*/
+
+/*include stylesheet for each page*/
+@import url("dashboard.css");
+
+@import url("index.css");
+
+@import url("profile.css");
+
+@import url("search.css");
+
+
+/*General styling on every page*/
+body{
+  background-color: #2E4357;
+}
+
+.navbar{
+  list-style-type: none;
+  margin: 60px 0 0 150px;
+  padding: 0;
+
+}
+
+.navbar li {
+  padding-left: 40px;
+  padding-right: 40px;
+  display: inline;
+  background-color: #666;
+  border: 1px solid #E6E6E6;
+
+}
+
+.navbar  a {
+  color: #F6F6F6;
+  text-decoration: none;
+
+}
+
+.navbar  li:hover {
+    background-color: #999;
+}
+
+.mainContent{
+  width: 60%;
+  margin: auto;
+}
+
+.title{
+  text-align: center;
+  color: #fff;
+}
+
+p{
+  color: #fff;
+}

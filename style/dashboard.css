@@ -1,1 +1,28 @@
 /*Dashboard css file*/
+table {
+  border: thin solid white;
+}
+th, td {
+  padding: 0px;
+  border: thin solid white;
+}
+
+img {
+  width: 256px;
+  height: 128px;
+  padding-bottom: 0px;
+}
+
+.likes {
+  float: left;
+  padding-top: 0px;
+  padding-left: 10px;
+  margin: 0px;
+}
+
+.comments {
+  float: right;
+  padding-top: 0px;
+  padding-right: 10px;
+  margin: 0px;
+}

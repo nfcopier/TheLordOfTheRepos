@@ -1,1 +1,48 @@
 /*Dashboard css file*/
+* {
+  padding: 0px;
+  margin: 0px;
+  /* border: 1px white solid; */
+}
+
+.table {
+  margin: auto;
+  width: 808px;
+}
+
+.row {
+  margin-bottom: 20px;
+  width: 808px;
+  display: inline-flex;
+}
+
+.picture-box {
+  display:inline-block;
+  margin-right: 20px;
+  width: 256px;
+  height: 168px;
+  float:
+}
+
+.picture-box:nth-child(3n) {
+  margin-right: 0px;
+  }
+
+.likes {
+  float: left;
+  padding-top: 0px;
+  padding-left: 10px;
+  margin: 0px;
+}
+
+.comments {
+  float: right;
+  padding-top: 0px;
+  padding-right: 10px;
+  margin: 0px;
+}
+
+img {
+  width: 256px;
+  height: 128px;
+}

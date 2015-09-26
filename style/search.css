@@ -1,1 +1,85 @@
 /*styling for search/results page*/
+/*------------ INPUT ------------*/
+.input {
+  overflow: auto;
+  margin-bottom: 10px;
+}
+
+.input input[type="search"]{
+  float: left;
+  width: 250px;
+  height: 22px;
+  margin-right: 5px;
+  border-radius: 25px;
+}
+
+.input input[type="search"]:focus {
+  padding-left: 6px;
+  font-size: 11pt;
+  outline: none;
+}
+
+.input button{
+  cursor: pointer;
+  float: left;
+  border-radius: 25px;
+  height: 22px;
+  padding-left: 7px;
+  padding-right: 7px;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.input button:focus{
+  outline: none;
+}
+
+/*------------ TOP SEARCHES ------------*/
+.top-searches {
+  position: relative;
+  overflow: hidden;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  background-color: #282D50;
+  padding-bottom: 5px;
+  border-color: black;
+  margin-bottom: 10px;
+}
+  h3.title {
+    margin: 5px 0px 5px 10px;
+    text-align: left;
+    text-decoration: underline;
+  }
+
+  .top-search-boxes {
+    overflow:auto;
+    width: 80%;
+    float: left;
+  }
+
+  .saved-search {
+    border-radius: 25px;
+    background-color: #03101D;
+    color: #fff;
+    margin: 5px 10px 5px 10px;
+    float: left;
+    text-align: center;
+    padding: 6px 6px 6px 6px;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid #fff;
+  }
+
+  .saved-searches-link {
+    height: 100%;
+    width: 20%;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+    .saved-searches-link a{
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      text-align: right;
+    }

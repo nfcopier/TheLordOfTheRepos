@@ -5,7 +5,7 @@
 .profile-picture {
     width: 30%;
     float: left;
-    background-color: grey;
+    background-color: grey
 }
 
 .profile-picture > img {
@@ -23,6 +23,10 @@
     padding: 0.5%;
     border: 0;
     margin: 2%;
+}
+
+.profile-form > input:first-child {
+  margin-top: 0;
 }
 
 .profile-form .profile-bio {

@@ -1,20 +1,11 @@
 /*Main stylesheet*/
 
-/*include stylesheet for each page*/
-@import url("dashboard.css");
-
-@import url("index.css");
-
-@import url("profile.css");
-
-@import url("search.css");
-
-@import url("responsive.css");
-
-
-/*General styling on every page*/
 body{
   background-color: #2E4357;
+}
+
+nav{
+  text-align: center;
 }
 
 .navbar{
@@ -30,7 +21,6 @@ body{
   display: inline;
   background-color: #666;
   border: 1px solid #E6E6E6;
-
 }
 
 .navbar  a {
@@ -62,4 +52,19 @@ p{
 
 a {
   color: #fff;
+}
+
+.input button{
+  cursor: pointer;
+  float: left;
+  border-radius: 25px;
+  height: 22px;
+  padding-left: 7px;
+  padding-right: 7px;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.input button:focus{
+  outline: none;
 }

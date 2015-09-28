@@ -1,1 +1,31 @@
-/*styling for profile page*/
+.profile-page {
+    width: 100%;
+}
+
+.profile-picture {
+    width: 30%;
+    float: left;
+    background-color: grey;
+}
+
+.profile-picture > img {
+    margin: 5%;
+    width: 90%;
+}
+
+.profile-form {
+    width: 70%;
+    float:right;
+}
+
+.profile-form > input, .profile-form > textarea {
+    width: 95%;
+    padding: 0.5%;
+    border: 0;
+    margin: 2%;
+}
+
+.profile-form .profile-bio {
+    height: 250px;
+    resize:none;
+}

@@ -2,7 +2,6 @@
 * {
   padding: 0px;
   margin: 0px;
-  /* border: 1px white solid; */
 }
 
 .table {
@@ -10,13 +9,13 @@
   width: 808px;
 }
 
-.row {
+.table-row {
   margin-bottom: 20px;
   width: 808px;
   display: inline-flex;
 }
 
-.picture-box {
+.table-cell {
   display:inline-block;
   margin-right: 20px;
   width: 256px;
@@ -24,7 +23,7 @@
   float:
 }
 
-.picture-box:nth-child(3n) {
+.table-cell:nth-child(3n) {
   margin-right: 0px;
   }
 

@@ -1,0 +1,18 @@
+
+{{>navbar}}
+
+<main>
+  <h1 class="title">{{title}}</h1>
+  <div class="profile-page">
+    <a class="profile-picture" href="">
+      <img src="./profile-img.jpg" alt="Profile Picture">
+    </a>
+    <form class="profile-form input">
+      <input name="Name" placeholder="Name" />
+      <input name="Email" type="email" placeholder="Email" />
+      <textarea name="Bio" class="profile-bio" placeholder="Bio"></textarea>
+      <input name="auth-token" type="hidden" />
+      <button class="saved-search">Submit</button>
+    </form>
+  </div>
+</main>

@@ -31,80 +31,13 @@ app.use(session({
   saveUninitialized: true
 }));
 
-// app.use('/', )
+
 app.use('/', indexRoutes)
 app.use('/user', userRoutes)
 app.use('/dashboard', dashboardRoutes)
 app.use('/search', searchRoutes)
 app.use('/profile', profileRoutes)
 
-
-// app.get('/dashboard', function(req, res) {
-// 	//var feed = require('./feed.json')
-//
-//
-// 	var obj = {}
-// 	obj.style = '/css/dashboard.css',
-// 	obj.layout = 'userPage',
-//   obj.title = 'User Dashboard!',
-//   obj.welcome = 'Welcome to your dashboard!',
-// 	//obj.feed = feed,
-//
-//
-//   res.render('dashboard', obj)
-// })
-
-// app.get('/profile', function(req, res) {
-// 	//var feed = require('./feed.json')
-// 	//var stippets = require('./stippets.json')
-//
-// 	var obj = {}
-// 	obj.style = '/css/profile.css',
-// 	obj.layout = 'userPage',
-//   obj.title = 'User Profile!',
-//   obj.welcome = 'Welcome to your dashboard!',
-// 	obj.profile = '',
-// 	//obj.feed = feed,
-// 	//obj.user = stippets
-//
-//   res.render('profile', obj)
-// })
-//
-// app.get('/savedSearches', function(req, res) {
-//
-// 	var obj = {}
-// 	obj.style = '/css/search.css',
-// 	obj.layout = 'userPage',
-//   obj.title = 'User Profile!',
-//   obj.welcome = 'Welcome to your dashboard!',
-//
-// 	res.render('savedSearches', obj)
-// })
-//
-// app.get('/savedResults', function(req, res) {
-// 	var results = ""
-//
-// 	var obj = {}
-// 	obj.style = '/css/search.css',
-// 	obj.layout = 'userPage',
-//   obj.title = 'Results',
-//
-//
-//
-// 	res.render('savedResults', obj)
-// })
-//
-// app.get('/search', function(req, res) {
-//
-// 	var obj = {}
-// 	obj.style = '/css/search.css',
-// 	obj.layout = 'userPage',
-//   obj.title = 'User Profile!',
-//   obj.welcome = 'Welcome to your dashboard!',
-//
-// 	res.render('search', obj)
-// })
-//
 
 
 app.use(express.static(path.join(__dirname, 'public')));

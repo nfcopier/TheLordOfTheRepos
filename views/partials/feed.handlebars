@@ -1,8 +1,17 @@
-{{#each pictures}}
-  <div class="table-cell">
-    <img src="{{this.images.standard_resolution.url}}">
-    <!-- <h3>{{this.caption}}</h3> -->
-    <p>Comments: {{this.comments.count}}</p>
-    <p>Likes: {{this.likes.count}}</p>
-  </div>
+{{#each pictures_n}}
+<!-- <p>{{@index}}</p> -->
+
+    <div class="table-row">
+
+      {{#each this}}
+        <div class="table-cell">
+          <img src="{{this.images.standard_resolution.url}}">
+          <!-- <h3>{{this.caption}}</h3> -->
+          <p>Comments: {{this.comments.count}}</p>
+          <p>Likes: {{this.likes.count}}</p>
+        </div>
+      {{/each}}
+
+    </div>
+
 {{/each}}

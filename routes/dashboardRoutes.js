@@ -9,8 +9,20 @@ router.get('/', function(req, res) {
   };
   request.get(options ,function(error, response, body) {
     var posts = JSON.parse(body);
+
+    // console.log(posts);
+    posts_data = posts.data;
+    var fixed_posts = [];// = posts_data.splice(0, 2);
+    var counter = 0;
+    for(var i = 0; i < posts_data.length; i+=3){
+       fixed_posts[counter] = posts_data.splice(i, 3);
+       counter += 1;
+    }
+
+
     var options = {
       pictures: posts.data,
+      pictures_n: fixed_posts,
       layout: 'userPage',
       title: 'Instacrammed',
       style: '/css/dashboard.css'

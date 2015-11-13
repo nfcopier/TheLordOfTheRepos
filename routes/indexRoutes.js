@@ -10,7 +10,7 @@ router.get('/', function(req, res) {
   res.render('index', {
     layout: 'basicPage',
     title: 'Instacrammed',
-    style: '/css/index.css',
+    style: ['/css/index.css'],
     message: 'Prepare to be marketed!'
   })
 })

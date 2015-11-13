@@ -6,7 +6,7 @@ router.get('/', function(req, res) {
   res.render('profile', {
     layout: 'basicPage',
     title: 'Profile',
-    style: '/css/profile.css',
+    style: ['/css/profile.css'],
     message: 'Prepare to be marketed!'
   })
 })

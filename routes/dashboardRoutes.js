@@ -12,7 +12,7 @@ router.get('/', function(req, res) {
 
     // console.log(posts);
     posts_data = posts.data;
-    var fixed_posts = [];// = posts_data.splice(0, 2);
+    var fixed_posts = [];
     var counter = 0;
     for(var i = 0; i < posts_data.length; i+=3){
        fixed_posts[counter] = posts_data.splice(i, 3);

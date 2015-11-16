@@ -11,7 +11,7 @@ router.get('/', function(req, res) {
     message: 'Prepare to be marketed!'
     // add partial
   })
-})
+});
 
 router.post('/', function(req,res) {
   var query = req.body.query;
@@ -20,10 +20,15 @@ router.post('/', function(req,res) {
     'https://api.instagram.com/v1/tags/' + query +  '/media/recent?access_token=' + req.session.access_token
   };
   request.get(options, function(error, response, body) {
-    var posts = JSON.parse(body);
+    var bodyJson = JSON.parse(body);
+    if((bodyJson.meta.code / 100) === 4) {
+      req.session.isLoggedIn = false;
+      res.redirect("/");
+      return;
+    }
 
     //console.log(posts);
-    posts_data = posts.data;
+    posts_data = bodyJson.data;
     var fixed_posts = [];
 
     var counter = 0;
@@ -34,7 +39,7 @@ router.post('/', function(req,res) {
 
 
     var options = {
-      pictures: posts.data,
+      pictures: bodyJson.data,
       pictures_n: fixed_posts,
       layout: 'userPage',
       title: 'Instacrammed',

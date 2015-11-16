@@ -6,6 +6,11 @@ var querystring = require('querystring');
 var request = require('request');
 
 router.get('/', function(req, res) {
+  
+  if(req.session.isLoggedIn) {
+    res.redirect("/dashboard");
+    return;
+  }
 
   res.render('index', {
     layout: 'basicPage',
@@ -33,6 +38,7 @@ router.get('/auth/finalize', function(req, res, next) {
     console.log(req.query.error);
     return res.redirect('/');
   };
+  req.session.isLoggedIn = true;
   var post_data = {
     client_id: cfg.client_id,
     client_secret: cfg.client_secret,

@@ -6,7 +6,7 @@ router.get('/', function(req, res) {
   res.render('savedResults', {
     layout: 'basicPage',
     title: 'Saved Results',
-    style: '/css/search.css',
+    style: ['/css/search.css'],
     message: 'Prepare to be marketed!'
     //add partial info
   })

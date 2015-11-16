@@ -10,9 +10,10 @@ router.get('/', function(req, res) {
   request.get(options ,function(error, response, body) {
     var posts = JSON.parse(body);
 
-    // console.log(posts);
+    //console.log(posts);
     posts_data = posts.data;
     var fixed_posts = [];
+
     var counter = 0;
     for(var i = 0; i < posts_data.length; i+=3){
        fixed_posts[counter] = posts_data.splice(i, 3);
@@ -25,7 +26,7 @@ router.get('/', function(req, res) {
       pictures_n: fixed_posts,
       layout: 'userPage',
       title: 'Instacrammed',
-      style: '/css/dashboard.css'
+      style: ['/css/dashboard.css']
     };
     res.render('dashboard', options);
   });

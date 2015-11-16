@@ -19,8 +19,7 @@
   display:inline-block;
   margin-right: 20px;
   width: 256px;
-  height: 168px;
-  float:
+  float: left;
 }
 
 .table-cell:nth-child(3n) {
@@ -43,5 +42,4 @@
 
 img {
   width: 256px;
-  height: 128px;
 }

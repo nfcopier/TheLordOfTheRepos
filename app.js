@@ -2,14 +2,12 @@ var express 	= require('express')
 	, path = require('path')
 	, exphbs		= require('express-handlebars')
   , port      = 3000
-	, marketingRoutes = require('./routes/marketingRoutes')
 	, indexRoutes = require('./routes/indexRoutes')
 	, dashboardRoutes = require('./routes/dashboardRoutes')
 	, savedResultsRoutes = require('./routes/savedResultsRoutes')
 	, savedSearchesRoutes = require('./routes/savedSearchesRoutes')
 	, profileRoutes = require('./routes/profileRoutes')
-	, searchRoutes = require('./routes/searchRoutes')
-	, userRoutes = require('./routes/userRoutes');
+	, searchRoutes = require('./routes/searchRoutes');
 var request = require('request');
 var bodyParser = require('body-parser');
 var querystring = require('querystring');
@@ -31,7 +29,6 @@ app.use(session({
 
 
 app.use('/', indexRoutes);
-app.use('/user', userRoutes);
 app.use('/dashboard', dashboardRoutes);
 app.use('/search', searchRoutes);
 app.use('/profile', profileRoutes);

@@ -1,18 +1,10 @@
-var express 	= require('express')
-	, path = require('path')
+var express			= require('express')
+	, path			= require('path')
 	, exphbs		= require('express-handlebars')
-  , port      = 3000
-	, indexRoutes = require('./routes/indexRoutes')
-	, dashboardRoutes = require('./routes/dashboardRoutes')
-	, savedResultsRoutes = require('./routes/savedResultsRoutes')
-	, savedSearchesRoutes = require('./routes/savedSearchesRoutes')
-	, profileRoutes = require('./routes/profileRoutes')
-	, searchRoutes = require('./routes/searchRoutes');
-var request = require('request');
-var bodyParser = require('body-parser');
-var querystring = require('querystring');
-var session = require('express-session');
-var cfg = require('./config');
+	, port			= 3000
+	, bodyParser 	= require('body-parser')
+	, session		= require('express-session')
+	, routes		= require('./routes/routesConfig');
 
 var app = express();
 
@@ -28,10 +20,10 @@ app.use(session({
 }));
 
 
-app.use('/', indexRoutes);
-app.use('/dashboard', dashboardRoutes);
-app.use('/search', searchRoutes);
-app.use('/profile', profileRoutes);
+app.use('/', routes.Index);
+app.use('/dashboard', routes.Dashboard);
+app.use('/search', routes.SearchRoutes);
+app.use('/profile', routes.ProfileRoutes);
 
 
 

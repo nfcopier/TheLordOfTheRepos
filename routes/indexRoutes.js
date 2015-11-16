@@ -7,13 +7,18 @@ var request = require('request');
 
 router.get('/', function(req, res) {
 
+  if(req.session.isLoggedIn) {
+    res.redirect("/dashboard");
+    return;
+  }
+
   res.render('index', {
     layout: 'basicPage',
     title: 'Instacrammed',
     style: ['/css/index.css'],
     message: 'Prepare to be marketed!'
   })
-})
+});
 
 router.get('/login', function(req, res){
   var qs = {
@@ -33,6 +38,7 @@ router.get('/auth/finalize', function(req, res, next) {
     console.log(req.query.error);
     return res.redirect('/');
   };
+  req.session.isLoggedIn = true;
   var post_data = {
     client_id: cfg.client_id,
     client_secret: cfg.client_secret,
@@ -51,4 +57,4 @@ router.get('/auth/finalize', function(req, res, next) {
   });
 });
 
-module.exports = router
+module.exports = router;

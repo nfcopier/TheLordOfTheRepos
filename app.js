@@ -1,22 +1,10 @@
-var express 	= require('express')
-	, path = require('path')
+var express			= require('express')
+	, path			= require('path')
 	, exphbs		= require('express-handlebars')
-  , port      = 3000
-	, marketingRoutes = require('./routes/marketingRoutes')
-	, indexRoutes = require('./routes/indexRoutes')
-
-	, dashboardRoutes = require('./routes/dashboardRoutes')
-	, savedResultsRoutes = require('./routes/savedResultsRoutes')
-	, savedSearchesRoutes = require('./routes/savedSearchesRoutes')
-	, profileRoutes = require('./routes/profileRoutes')
-	, searchRoutes = require('./routes/searchRoutes')
-	//add more routes for the different pages to avoid cluttering up this page
-	, userRoutes = require('./routes/userRoutes');
-var request = require('request');
-var bodyParser = require('body-parser');
-var querystring = require('querystring');
-var session = require('express-session');
-var cfg = require('./config');
+	, port			= 3000
+	, bodyParser 	= require('body-parser')
+	, session		= require('express-session')
+	, routes		= require('./routes/routesConfig');
 
 var app = express();
 
@@ -32,16 +20,15 @@ app.use(session({
 }));
 
 
-app.use('/', indexRoutes)
-app.use('/user', userRoutes)
-app.use('/dashboard', dashboardRoutes)
-app.use('/search', searchRoutes)
-app.use('/profile', profileRoutes)
+app.use('/', routes.Index);
+app.use('/dashboard', routes.Dashboard);
+app.use('/search', routes.SearchRoutes);
+app.use('/profile', routes.ProfileRoutes);
 
 
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.listen(port)
+app.listen(port);
 
-console.log('Server running at http:127.0.0.1:' + port + '/')
+console.log('Server running at http:127.0.0.1:' + port + '/');

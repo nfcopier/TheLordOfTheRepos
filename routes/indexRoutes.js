@@ -57,4 +57,4 @@ router.get('/auth/finalize', function(req, res, next) {
   });
 });
 
-module.exports = router
+module.exports = router;

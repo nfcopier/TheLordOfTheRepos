@@ -7,7 +7,7 @@ router.get('/dashboard', function(req, res) {
     title: 'User Dashboard!',
     message: 'Welcome to your dashboard!'
   })
-})
+});
 
 router.get('/profile', function(req, res) {
   res.render('profile', {
@@ -15,7 +15,7 @@ router.get('/profile', function(req, res) {
     title: 'User Profile!',
     message: 'Welcome to your dashboard!'
   })
-})
+});
 
 
-module.exports = router
+module.exports = router;

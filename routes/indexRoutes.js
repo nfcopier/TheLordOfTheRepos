@@ -6,7 +6,7 @@ var querystring = require('querystring');
 var request = require('request');
 
 router.get('/', function(req, res) {
-  
+
   if(req.session.isLoggedIn) {
     res.redirect("/dashboard");
     return;
@@ -18,7 +18,7 @@ router.get('/', function(req, res) {
     style: ['/css/index.css'],
     message: 'Prepare to be marketed!'
   })
-})
+});
 
 router.get('/login', function(req, res){
   var qs = {

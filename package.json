@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/nfcopier/TheLordOfTheRepos/issues"
   },
-  "homepage": "https://github.com/nfcopier/TheLordOfTheRepos#readme"
+  "homepage": "https://github.com/nfcopier/TheLordOfTheRepos#readme",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "express-handlebars": "^2.0.1",
+    "express-session": "^1.12.1",
+    "querystring": "^0.2.0",
+    "request": "^2.65.0"
+  }
 }

@@ -4,13 +4,11 @@ var express 	= require('express')
   , port      = 3000
 	, marketingRoutes = require('./routes/marketingRoutes')
 	, indexRoutes = require('./routes/indexRoutes')
-
 	, dashboardRoutes = require('./routes/dashboardRoutes')
 	, savedResultsRoutes = require('./routes/savedResultsRoutes')
 	, savedSearchesRoutes = require('./routes/savedSearchesRoutes')
 	, profileRoutes = require('./routes/profileRoutes')
 	, searchRoutes = require('./routes/searchRoutes')
-	//add more routes for the different pages to avoid cluttering up this page
 	, userRoutes = require('./routes/userRoutes');
 var request = require('request');
 var bodyParser = require('body-parser');
@@ -32,16 +30,16 @@ app.use(session({
 }));
 
 
-app.use('/', indexRoutes)
-app.use('/user', userRoutes)
-app.use('/dashboard', dashboardRoutes)
-app.use('/search', searchRoutes)
-app.use('/profile', profileRoutes)
+app.use('/', indexRoutes);
+app.use('/user', userRoutes);
+app.use('/dashboard', dashboardRoutes);
+app.use('/search', searchRoutes);
+app.use('/profile', profileRoutes);
 
 
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.listen(port)
+app.listen(port);
 
-console.log('Server running at http:127.0.0.1:' + port + '/')
+console.log('Server running at http:127.0.0.1:' + port + '/');

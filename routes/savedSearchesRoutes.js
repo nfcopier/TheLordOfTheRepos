@@ -3,13 +3,18 @@ var router = express.Router();
 
 router.get('/', function(req, res) {
 
+  if(!req.session.isLoggedIn) {
+    res.redirect("/");
+    return;
+  }
+
   res.render('savedSearches', {
     layout: 'basicPage',
     title: 'Instacrammed',
     style: ['/css/search.css'],
     message: 'Prepare to be marketed!'
-    // add partial
+    // TODO: add partial info
   })
-})
+});
 
-module.exports = router
+module.exports = router;

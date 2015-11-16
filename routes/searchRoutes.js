@@ -4,8 +4,13 @@ var request = require('request');
 
 router.get('/', function(req, res) {
 
+  if(!req.session.isLoggedIn) {
+    res.redirect("/");
+    return;
+  }
+
   res.render('search', {
-    layout: 'basicPage',
+    layout: 'userPage',
     title: 'Instacrammed',
     style: ['/css/search.css', '/css/dashboard.css'],
     message: 'Prepare to be marketed!'
@@ -41,7 +46,7 @@ router.post('/', function(req,res) {
     var options = {
       pictures: bodyJson.data,
       pictures_n: fixed_posts,
-      layout: 'userPage',
+      layout: 'userPage', // TODO: Why isn't this rendering the `userPage` layout?
       title: 'Instacrammed',
       style: ['/css/search.css', '/css/dashboard.css']
     };
@@ -49,5 +54,4 @@ router.post('/', function(req,res) {
   });
 });
 
-
-module.exports = router
+module.exports = router;

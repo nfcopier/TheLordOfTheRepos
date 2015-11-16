@@ -4,6 +4,12 @@ var request = require('request');
 var bodyParser = require('body-parser');
 
 router.get('/', function(req, res) {
+
+  if(!req.session.isLoggedIn) {
+    res.redirect("/");
+    return;
+  }
+
   var options = {
     url: 'https://api.instagram.com/v1/users/self/feed?access_token=' + req.session.access_token
   };

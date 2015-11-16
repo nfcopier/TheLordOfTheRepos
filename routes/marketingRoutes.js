@@ -8,6 +8,6 @@ router.get('/', function(req, res) {
     title: 'This is the marketing page!',
     message: 'Prepare to be marketed!'
   })
-})
+});
 
-module.exports = router
+module.exports = router;

@@ -23,5 +23,6 @@
     "express-session": "^1.12.1",
     "querystring": "^0.2.0",
     "request": "^2.65.0"
-  }
+  },
+  "devDependencies": {}
 }

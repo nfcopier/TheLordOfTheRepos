@@ -1,10 +1,12 @@
-var express			= require('express')
-	, path			= require('path')
-	, exphbs		= require('express-handlebars')
-	, port			= 3000
-	, bodyParser 	= require('body-parser')
-	, session		= require('express-session')
-	, routes		= require('./routes/routesConfig');
+var express		= require('express');
+var path			= require('path');
+var exphbs		= require('express-handlebars');
+var bodyParser 	= require('body-parser');
+var session		= require('express-session');
+var routes		= require('./routes/routesConfig');
+var port			= 3000;
+
+var db = require('./db');
 
 var app = express();
 
@@ -29,6 +31,13 @@ app.use('/profile', routes.ProfileRoutes);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.listen(port);
-
-console.log('Server running at http:127.0.0.1:' + port + '/');
+db.connect('mongodb://BillyBob:password@ds039684.mongolab.com:39684/testing', function(err) {
+  if (err) {
+    console.log('Unable to connect to Mongo.');
+    process.exit(1);
+  } else {
+    app.listen(port, function() {
+      console.log('Server running at http:127.0.0.1:' + port + '/');
+    });
+  }
+});

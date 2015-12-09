@@ -35,7 +35,8 @@ db.connect('mongodb://BillyBob:password@ds039684.mongolab.com:39684/testing', fu
   if (err) {
     console.log('Unable to connect to Mongo.');
     process.exit(1);
-  } else {
+  }
+  else {
     app.listen(port, function() {
       console.log('Server running at http:127.0.0.1:' + port + '/');
     });

@@ -2,13 +2,13 @@ var express = require('express');
 var router = express.Router();
 var request = require('request');
 
-router.get('/', function(req, res) {
+var Users = require('../models/users');
 
+router.get('/', function(req, res) {
   if(!req.session.isLoggedIn) {
     res.redirect("/");
     return;
   }
-
   res.render('search', {
     layout: 'userPage',
     title: 'Instacrammed',
@@ -32,16 +32,18 @@ router.post('/', function(req,res) {
       return;
     }
 
-    //console.log(posts);
-    posts_data = bodyJson.data;
-    var fixed_posts = [];
+    var search = req.body.query;
+    var userId = req.session.userId;
+    Users.addSearch(userId, search, function(){});
 
+    posts_data = bodyJson.data;
+
+    var fixed_posts = [];
     var counter = 0;
     for(var i = 0; i < posts_data.length; i+=3){
        fixed_posts[counter] = posts_data.splice(i, 3);
        counter += 1;
     }
-
 
     var options = {
       pictures: bodyJson.data,

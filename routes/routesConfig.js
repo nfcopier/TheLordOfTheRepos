@@ -1,4 +1,3 @@
-
  module.exports = {
      Index: require('./indexRoutes'),
      Dashboard: require('./dashboardRoutes'),

@@ -63,7 +63,8 @@ router.get('/auth/finalize', function(req, res, next) {
 
     Users.find(user._id, function(document) {
       if (!document) {
-        Users.insert(user, function (restult) {
+        Users.insert(user, function (result) {
+          req.session.userId = result.ops[0]._id;
           res.redirect('/dashboard');
         });
       }

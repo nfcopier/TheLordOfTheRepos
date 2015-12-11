@@ -26,6 +26,8 @@ app.use('/', routes.Index);
 app.use('/dashboard', routes.Dashboard);
 app.use('/search', routes.SearchRoutes);
 app.use('/profile', routes.ProfileRoutes);
+app.use('/savedSearches', routes.SavedSearches);
+app.use('/savedResults', routes.SavedResults);
 
 
 

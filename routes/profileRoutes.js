@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var Users = require('../models/users');
 
 router.get('/', function(req, res) {
 
@@ -8,12 +9,25 @@ router.get('/', function(req, res) {
     return;
   }
 
+  var userId = req.session.userId;
+  Users.find(userId, function(user){ respond(res, user, false) });
+
+});
+
+router.post("/", function(req, res){
+
+  Users.update(req.body, function(){ respond(res, req.body, true) });
+
+});
+
+var respond = function (res, user, success) {
   res.render('profile', {
-    layout: 'basicPage',
+    layout: 'userPage',
     title: 'Profile',
     style: ['/css/profile.css'],
-    message: 'Prepare to be marketed!'
-  })
-});
+    user: user,
+    showSuccess: success
+  });
+};
 
 module.exports = router;

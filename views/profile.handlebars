@@ -1,17 +1,21 @@
-
-{{>navbar}}
-
 <main>
   <h1 class="title">{{title}}</h1>
+  {{#if showSuccess}}
+      <div style="color: green;width: 100%;text-align: center;margin: -40px 0 22px 0">
+          Profile updated successfully
+      </div>
+  {{/if}}
   <div class="profile-page">
     <a class="profile-picture" href="">
-      <img src="./profile-img.jpg" alt="Profile Picture">
+      <img src="{{user.profile_picture}}" alt="Profile Picture">
     </a>
-    <form class="profile-form input">
-      <input name="Name" placeholder="Name" />
-      <input name="Email" type="email" placeholder="Email" />
-      <textarea name="Bio" class="profile-bio" placeholder="Bio"></textarea>
-      <input name="auth-token" type="hidden" />
+    <form class="profile-form input" method="post">
+      <input name="full_name" placeholder="Name" value="{{user.full_name}}" />
+      <input name="username" placeholder="User Name" value="{{user.username}}" />
+      <input name="website" type="url" placeholder="Website" value="{{user.website}}" />
+      <textarea name="bio" class="profile-bio" placeholder="Bio">{{user.bio}}</textarea>
+      <input name="profile_picture" type="hidden" value="{{user.profile_picture}}" />
+      <input name="_id" type="hidden" value="{{user._id}}" />
       <button class="saved-search">Submit</button>
     </form>
   </div>

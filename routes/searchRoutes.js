@@ -48,7 +48,7 @@ router.post('/', function(req,res) {
     var options = {
       pictures: bodyJson.data,
       pictures_n: fixed_posts,
-      layout: 'userPage', // TODO: Why isn't this rendering the `userPage` layout?
+      layout: 'userPage',
       title: 'Instacrammed',
       style: ['/css/search.css', '/css/dashboard.css']
     };

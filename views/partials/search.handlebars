@@ -1,5 +1,9 @@
 
 {{#each searches}}
-  <a class="saved-search" href="/savedResults/{{this}}">#{{this}}</a>
-  <!-- link or button to delete the search -->
+  <div class="saved-search">
+    <form class="delete-saved-search" action="/savedSearches" method="post">
+      <a href="/savedResults/{{this}}">#{{this}}</a>
+      <button type="submit" name="delete" value="{{this}}">x</button>
+    </form>
+  </div>
 {{/each}}

@@ -61,7 +61,7 @@ exports.addSearch = function(userId, search, callback) {
 exports.removeSearch = function(userId, search, callback) {
   var collection = db.get().collection('users');
   collection.update(
-    {'_id': ObjectId(userId)},
+    {'_id': userId},
     { $pull: {searches: search }},
     function(err, result) {
       assert.equal(err, null);

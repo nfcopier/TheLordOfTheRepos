@@ -1,6 +1,6 @@
+<!--suppress HtmlUnknownTarget -->
 <main>
   <h1 class="title">Search</h1>
-  <!-- add partial here? -->
 
   <div class="search">
     <div class="input">
@@ -14,8 +14,16 @@
     </div>
   </div>
 
-<div class="table">
+  <div class="table">
+
+    {{#if tag}}
+      <form class="tag input" action="/savedSearches/add" method="post">
+        <h2 class="tag-name">#{{tag}}</h2>
+        <button class="tag-button" type="submit" name="add" value="{{tag}}">Save</button>
+      </form>
+    {{/if}}
+
     {{>feed}}
-</div>
-<!--  -->
-</main><!--mainContent  -->
+
+  </div>
+</main>

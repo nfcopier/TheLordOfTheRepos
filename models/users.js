@@ -1,39 +1,35 @@
-var assert = require('assert')
-var db = require('../db')
+var assert = require('assert');
+var db = require('../db');
 
 exports.insert = function(user, callback) {
   // Get the users collection
-  var collection = db.get().collection('users')
+  var collection = db.get().collection('users');
   // Insert a user
   collection.insert(user, function(err, result) {
-    assert.equal(err, null)
-    assert.equal(1, result.result.n)
-    assert.equal(1, result.ops.length)
-    console.log('Inserted 1 document into the users collection')
+    assert.equal(err, null);
+    assert.equal(1, result.result.n);
+    assert.equal(1, result.ops.length);
     callback(result)
   })
-}
+};
 
 exports.find = function(id, callback) {
   // Get the users collection
-  var collection = db.get().collection('users')
+  var collection = db.get().collection('users');
   // Find a user
   collection.findOne({'_id': id}, function(err, document) {
-    assert.equal(err, null)
-    console.log('Found 1 user document')
+    assert.equal(err, null);
     callback(document)
   })
-}
+};
 
 exports.update = function(user, callback) {
   // Get the users collection
-  var collection = db.get().collection('users')
-  user._id = user._id
+  var collection = db.get().collection('users');
   // Update the user
   collection.update({'_id': user._id}, user, function(err, result) {
-    assert.equal(err, null)
-    assert.equal(1, result.result.n)
-    console.log('Updated 1 document in the users collection')
+    assert.equal(err, null);
+    assert.equal(1, result.result.n);
     callback()
   });
 };
@@ -51,7 +47,6 @@ exports.addSearch = function(userId, search, callback) {
         function(err, result) {
           assert.equal(err, null);
           assert.equal(1, result.result.n);
-          console.log('Added 1 saved search to a user document');
         });
     }
     callback();
@@ -66,7 +61,6 @@ exports.removeSearch = function(userId, search, callback) {
     function(err, result) {
       assert.equal(err, null);
       assert.equal(1, result.result.n);
-      console.log('Removed 1 saved search from a user document');
       callback();
     });
 };

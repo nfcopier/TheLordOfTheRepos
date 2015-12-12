@@ -1,4 +1,19 @@
 /*styling for search/results page*/
+
+.tag {
+  margin-top: 20px;
+}
+
+.tag-name {
+  color: #fff;
+  float: left;
+}
+
+.tag-button {
+  margin-left: 10px;
+  float:right;
+}
+
 /*------------ INPUT ------------*/
 .input {
   overflow: auto;

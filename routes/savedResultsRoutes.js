@@ -48,7 +48,6 @@ request.get(options, function(error, response, body) {
       message: 'Prepare to be marketed!',
       pictures_n: fixed_posts,
       pictures: bodyJson.data
-      // TODO: add partial info
     })
   });
 

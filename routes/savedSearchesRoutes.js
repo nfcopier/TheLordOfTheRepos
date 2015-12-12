@@ -1,10 +1,8 @@
 var express = require('express');
 var router = express.Router();
-var request = require('request');
 
 var Users = require('../models/users');
 
-/*----------------------------------GET-----------------*/
 router.get('/', function(req, res) {
   if(!req.session.isLoggedIn) {
     res.redirect("/");
@@ -21,20 +19,27 @@ router.get('/', function(req, res) {
       title: 'Instacrammed',
       style: ['/css/search.css', '/css/dashboard.css'],
       message: 'Prepare to be marketed!',
-      searches: user.searches,
-    }
+      searches: user.searches
+    };
 
     res.render('savedSearches', options)
   });
 });
 
-/*----------------------------------POST-----------------*/
-router.post('/', function (req, res) {
-  var deleted = req.body.delete;
-  console.log("\ndelete: " + deleted + "\n");
+router.post('/add', function (req, res) {
+  var added = req.body.add;
   var userId = req.session.userId;
-  Users.removeSearch(userId, deleted, function(){});
-  res.redirect('/savedSearches')
+  Users.addSearch(userId, added, function(){
+    res.redirect('/savedResults/' + added)
+  });
+});
+
+router.post('/delete', function (req, res) {
+  var deleted = req.body.delete;
+  var userId = req.session.userId;
+  Users.removeSearch(userId, deleted, function(){
+    res.redirect('/savedSearches')
+  });
 });
 
 module.exports = router;

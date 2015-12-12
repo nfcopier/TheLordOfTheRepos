@@ -2,8 +2,6 @@ var express = require('express');
 var router = express.Router();
 var request = require('request');
 
-var Users = require('../models/users');
-
 router.get('/', function(req, res) {
   if(!req.session.isLoggedIn) {
     res.redirect("/");
@@ -14,7 +12,6 @@ router.get('/', function(req, res) {
     title: 'Instacrammed',
     style: ['/css/search.css', '/css/dashboard.css'],
     message: 'Prepare to be marketed!'
-    // add partial
   })
 });
 
@@ -33,8 +30,6 @@ router.post('/', function(req,res) {
     }
 
     var search = req.body.query;
-    var userId = req.session.userId;
-    Users.addSearch(userId, search, function(){});
 
     posts_data = bodyJson.data;
 
@@ -50,7 +45,8 @@ router.post('/', function(req,res) {
       pictures_n: fixed_posts,
       layout: 'userPage',
       title: 'Instacrammed',
-      style: ['/css/search.css', '/css/dashboard.css']
+      style: ['/css/search.css', '/css/dashboard.css'],
+      tag: query
     };
     res.render('search', options);
   });
